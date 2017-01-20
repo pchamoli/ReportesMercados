@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RptDataSource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="conexionMinoristas">
+  <ConnectionProperties>
+    <Extension>SQL</Extension>
+    <ConnectString>Data Source=SEVEN-PC\GRUPO1;Initial Catalog=DB_REGISTROS</ConnectString>
+  </ConnectionProperties>
+  <DataSourceID>930c46a0-0791-432b-bade-d3f948a85297</DataSourceID>
+</RptDataSource>
