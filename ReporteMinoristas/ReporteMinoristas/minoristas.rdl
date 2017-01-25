@@ -3,22 +3,6 @@
   <df:DefaultFontFamily>Segoe UI</df:DefaultFontFamily>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="dataFormato">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=SEVEN-PC\GRUPO1;Initial Catalog=DB_REGISTROS</ConnectString>
-      </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>d639ed74-bd87-49c2-985e-d97bb713c25b</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="dataMercado">
-      <ConnectionProperties>
-        <DataProvider>SQL</DataProvider>
-        <ConnectString>Data Source=SEVEN-PC\GRUPO1;Initial Catalog=DB_REGISTROS</ConnectString>
-      </ConnectionProperties>
-      <rd:SecurityType>DataBase</rd:SecurityType>
-      <rd:DataSourceID>eeb6e3cd-b338-4911-a498-457580d96d42</rd:DataSourceID>
-    </DataSource>
     <DataSource Name="dataMinoristas">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
@@ -31,9 +15,13 @@
   <DataSets>
     <DataSet Name="DSFormato">
       <Query>
-        <DataSourceName>dataFormato</DataSourceName>
-        <CommandType>StoredProcedure</CommandType>
-        <CommandText>P_LISTAR_FORMATOS</CommandText>
+        <DataSourceName>dataMinoristas</DataSourceName>
+        <CommandText>SELECT nom_formato,id_formato
+FROM DAT_FORMATO
+UNION 
+SELECT '',NULL
+ORDER BY nom_formato
+</CommandText>
       </Query>
       <Fields>
         <Field Name="nom_formato">
@@ -48,7 +36,7 @@
     </DataSet>
     <DataSet Name="DSMercado">
       <Query>
-        <DataSourceName>dataMercado</DataSourceName>
+        <DataSourceName>dataMinoristas</DataSourceName>
         <CommandText>SELECT        id_mercado, nom_mercado
 FROM            DAT_MERCADO
 WHERE        (tipo_mercado = 1)</CommandText>
